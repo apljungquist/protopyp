@@ -2,6 +2,7 @@
 /.idea/
 /.tox/
 /build/
+/check_*
 /dist/
 /reports/
 /src/protopyp/_version.py

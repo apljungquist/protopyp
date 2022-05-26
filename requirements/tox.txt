@@ -4,5 +4,5 @@
 #
 #    tox --requirements-file requirements/tox.txt
 #
-coverage  # from py
-pytest    # from py
+coverage  # from 310, py37
+pytest    # from 310, py37

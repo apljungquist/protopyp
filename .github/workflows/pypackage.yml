@@ -51,6 +51,7 @@ jobs:
       run: tox -e py
 
   deploy:
+    if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
     needs: [stable, unstable]
     runs-on: ubuntu-18.04
     steps:
@@ -60,7 +61,6 @@ jobs:
       with:
         python-version: "3.10"
     - name: Publish to PyPI
-      if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
       uses: pypa/gh-action-pypi-publish@master
       with:
         user: __token__

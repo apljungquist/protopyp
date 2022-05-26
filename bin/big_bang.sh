@@ -11,5 +11,5 @@ export GIT_COMMITTER_DATE="Thu, 01 Jan 1970 00:00:00 +0000"
 if [ ! -d .git ]; then
   git init .
   git reset "`git commit-tree 4b825dc642cb6eb9a060e54bf8d69288fbee4904 -m "Initial commit"`"
-  git tag R0.0.0
+  git tag v0.0.0
 fi

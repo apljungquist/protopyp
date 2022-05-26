@@ -1,4 +1,2 @@
--r requirements/build.txt
 -r requirements/dev.txt
--r requirements/run.txt
 -e .

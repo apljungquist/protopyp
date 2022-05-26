@@ -1,6 +1,6 @@
-_src_path: template
+_src_path: ../protopyp_template/template
+long_name: Prototype Python Project
 short_description: A prototype for python projects
 short_name: protopyp
-long_name: Prototype Python Project
 
 

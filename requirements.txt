@@ -1,11 +1,3 @@
-black
-copier
-coverage
-flake8
-markupsafe <2.1.0 # Bug in copier
-mypy
-pip
-pip-tools >=6.6.2
-pylint
-pytest >=6.2.5
-setuptools
+-r requirements/dev.txt
+-r requirements/tox.txt
+-e .

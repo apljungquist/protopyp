@@ -12,7 +12,7 @@ export PIP_CONSTRAINT
 
 if [ ! -d "venv" ]; then
   echo "Creating venv"
-  python -m venv --prompt "coorded_template" venv
+  python -m venv --prompt "protopyp" venv
   . "venv/bin/activate"
   pip install pip setuptools
 else

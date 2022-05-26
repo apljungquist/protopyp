@@ -1,0 +1,19 @@
+[metadata]
+name = {{project_name}}
+version = attr: {{project_name}}._version.version
+description = {{project_description}}
+long_description = file: README.md
+long_description_content_type = text/markdown
+classifiers = Private :: Do not upload to PyPI
+
+[options]
+install_requires =
+    more-itertools
+package_dir=
+    =src
+
+[options.packages.find]
+where = src
+
+[options.package_data]
+{{project_name}} = py.typed

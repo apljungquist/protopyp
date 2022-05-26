@@ -1,0 +1,68 @@
+[build-system]
+requires = [
+    "setuptools>=45",
+    "setuptools_scm[toml]>=6.0"
+]
+build-backend = "setuptools.build_meta"
+
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+
+[tool.mypy]
+disallow_untyped_defs = true
+
+
+[tool.pylint.MASTER]
+ignore = ["_version.py"]
+
+
+[tool.pylint.format]
+max-line-length = 88
+
+[tool.pylint.messages_control]
+disable = [
+    "missing-docstring",
+    "bad-continuation",  # for black compatibility
+]
+good-names = [
+    "_",
+    "e",
+    "f",
+    "i",
+    "j",
+    "k",
+    "n",
+    "p",
+    "T",
+    "v",
+    "x",
+    "y",
+    "z",
+    "ax",
+    "db",
+    "dx",
+    "dy",
+    "fd",
+    "tz"
+]
+bad-names=[
+    "foo",
+    "bar",
+    "baz",
+    "toto",
+    "tutu",
+    "tata",
+    "LOGGER"
+]
+
+
+[tool.setuptools_scm]
+tag_regex = '^R(?:[\w-]+-)?(?P<version>[vV]?\d+(?:\.\d+){0,2}[^\+]*)(?:\+.*)?$'
+write_to = 'src/{{project_name}}/_version.py'
+
+
+[tool.tox-constraints]
+plugin_enabled = true

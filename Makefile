@@ -87,7 +87,7 @@ fix_format: ## ...
 # * Must not have any prerequisites that are verbs
 # * Ordered first by specificity, second by name
 
-constraints.txt: requirements/tox.txt $(wildcard requirements/*.txt)
+constraints.txt: $(wildcard requirements/*.txt)
 	pip-compile --allow-unsafe --strip-extras --output-file $@ $^ > /dev/null
 
 dist/_envoy:
@@ -103,7 +103,3 @@ reports/test_coverage/html/index.html: reports/test_coverage/.coverage
 
 reports/test_coverage/coverage.xml: reports/test_coverage/.coverage
 	coverage xml --data-file=$< -o $@
-
-requirements/tox.txt: tox.ini
-	tox -l --requirements-file $@
-	touch $@

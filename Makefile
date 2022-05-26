@@ -87,7 +87,7 @@ fix_format: ## ...
 # * Must not have any prerequisites that are verbs
 # * Ordered first by specificity, second by name
 
-constraints.txt: $(wildcard requirements/*.txt)
+constraints.txt: pyproject.toml $(wildcard requirements/*.txt)
 	pip-compile --allow-unsafe --strip-extras --output-file $@ $^ > /dev/null
 
 dist/_envoy:

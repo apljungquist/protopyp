@@ -1,6 +1,14 @@
-# protopyp
+# Prototype Python Project
 
-_A prototype for python project_
+_A prototype for python projects_
+
+
+## Goals
+This project is generated from a [template](https://github.com/apljungquist/protopyp_template).
+It is meant to
+* test the template, and
+* demonstrate what the result from the template can look like.
+
 
 ## How to run checks locally
 Make sure the python versions listed in `.python-version` are installed.

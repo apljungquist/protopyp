@@ -15,6 +15,9 @@ line_length = 88
 [tool.mypy]
 disallow_untyped_defs = true
 
+[[tool.mypy.overrides]]
+module = ['copier',]
+ignore_missing_imports = true
 
 [tool.pylint.MASTER]
 ignore = ["_version.py"]

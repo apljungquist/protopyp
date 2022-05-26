@@ -13,9 +13,12 @@ export PIP_CONSTRAINT
 if [ ! -d "venv" ]; then
   echo "Creating venv"
   python -m venv --prompt "protopyp" venv
+  # Avoid surprises since this would not undo the PATH augmentation below
+  rm venv/bin/deactivate
   . "venv/bin/activate"
   pip install pip setuptools
 else
   echo "Reusing venv"
   . "venv/bin/activate"
 fi
+export PATH="${PROJECT_PATH}/bin/:${PATH}"

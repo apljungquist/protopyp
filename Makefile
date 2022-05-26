@@ -45,7 +45,7 @@ help: ## Print this help message
 	@python -c "$$PRINT_HELP" < $(MAKEFILE_LIST)
 
 check_all: check_format check_types check_lint check_dist check_docs check_tests ## Run all checks that have not yet passed
-	rm $<
+	rm $^
 
 check_format: ## ...
 	isort --check setup.py src/ tests/

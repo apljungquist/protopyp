@@ -27,36 +27,8 @@ disable = [
     "missing-docstring",
     "bad-continuation",  # for black compatibility
 ]
-good-names = [
-    "_",
-    "e",
-    "f",
-    "i",
-    "j",
-    "k",
-    "n",
-    "p",
-    "T",
-    "v",
-    "x",
-    "y",
-    "z",
-    "ax",
-    "db",
-    "dx",
-    "dy",
-    "fd",
-    "tz"
-]
-bad-names=[
-    "foo",
-    "bar",
-    "baz",
-    "toto",
-    "tutu",
-    "tata",
-    "LOGGER"
-]
+good-names = []
+bad-names=[]
 
 
 [tool.setuptools_scm]

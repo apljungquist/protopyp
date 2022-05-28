@@ -5,6 +5,10 @@
 /check_*
 /dist/
 /reports/
+/requirements/build.txt
+/requirements/global.in
+/requirements/global.txt
+/requirements/run.txt
 /src/protopyp/_version.py
 /src/*.egg-info/
 /venv/

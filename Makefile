@@ -87,7 +87,7 @@ fix_format: ## ...
 # * Must not have any prerequisites that are verbs
 # * Ordered first by specificity, second by name
 
-constraints.txt: pyproject.toml $(wildcard requirements/*.txt)
+constraints.txt: requirements/build.txt requirements/global.txt $(wildcard requirements/*.txt)
 	pip-compile --allow-unsafe --strip-extras --output-file $@ $^ > /dev/null
 
 dist/_envoy:
@@ -103,3 +103,17 @@ reports/test_coverage/html/index.html: reports/test_coverage/.coverage
 
 reports/test_coverage/coverage.xml: reports/test_coverage/.coverage
 	coverage xml --data-file=$< -o $@
+
+requirements/build.txt: pyproject.toml
+	pilecap build_requirements $< > $@
+
+requirements/global.in: constraints/global.txt requirements/run.txt
+	rm $@ ||:
+	echo "-c ../constraints/global.txt" >> $@
+	echo "-r ../requirements/run.txt" >> $@
+
+requirements/global.txt: requirements/global.in
+	pip-compile --allow-unsafe --output-file $@ $< > /dev/null
+
+requirements/run.txt: pyproject.toml
+	pilecap run_requirements $< > $@

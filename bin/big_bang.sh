@@ -12,4 +12,6 @@ if [ ! -d .git ]; then
   git init .
   git reset "`git commit-tree 4b825dc642cb6eb9a060e54bf8d69288fbee4904 -m "Initial commit"`"
   git tag v0.0.0
+  git add .
+  git commit -m "Add boilerplate from template"
 fi

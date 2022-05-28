@@ -88,7 +88,7 @@ fix_format: ## ...
 # * Ordered first by specificity, second by name
 
 constraints.txt: requirements/build.txt requirements/global.txt $(wildcard requirements/*.txt)
-	pip-compile --allow-unsafe --strip-extras --output-file $@ $^ > /dev/null
+	pip-compile --allow-unsafe --strip-extras --output-file $@ $^ 2>/dev/null
 
 dist/_envoy:
 	$(CLEAN_DIR_TARGET)
@@ -108,12 +108,12 @@ requirements/build.txt: pyproject.toml
 	pilecap build_requirements $< > $@
 
 requirements/global.in: constraints/global.txt requirements/run.txt
-	rm $@ ||:
+	[ -f $@ ] && rm $@
 	echo "-c ../constraints/global.txt" >> $@
 	echo "-r ../requirements/run.txt" >> $@
 
 requirements/global.txt: requirements/global.in
-	pip-compile --allow-unsafe --output-file $@ $< > /dev/null
+	pip-compile --allow-unsafe --output-file $@ $< 2>/dev/null
 
 requirements/run.txt: pyproject.toml
 	pilecap run_requirements $< > $@

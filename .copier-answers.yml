@@ -1,4 +1,5 @@
 _src_path: ../protopyp_template/template
+license: mit
 long_name: Prototype Python Project
 short_description: A prototype for python projects
 short_name: protopyp
